@@ -5,11 +5,11 @@ const port = process.env.PORT || 3000;
  
 // здесь у нас происходит импорт пакетов и определяется порт нашего сервера
 const app = express();
-app.use(favicon(__dirname + '/build/favicon.ico')); 
+app.use(favicon(__dirname + '../build/favicon.ico')); 
  
 //здесь наше приложение отдаёт статику
 app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '../build')));
  
 //простой тест сервера
 app.get('/ping', function (req, res) {
@@ -17,7 +17,12 @@ app.get('/ping', function (req, res) {
 });
  
  //обслуживание html
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
+
+app.get('/api/resorces', function(req, res) {
+    res.json({'title': 'link', 'text': 'text'});
+});
+
 app.listen(port);

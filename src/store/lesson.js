@@ -1,4 +1,5 @@
 import { makeAutoObservable } from "mobx";
+import resorces from "./resorces";
 
 class Lesson {
     topic = '';
@@ -17,7 +18,7 @@ class Lesson {
     }
 
     getResorces() {
-        console.log(this.topic, this.text);
+        resorces.loadResorces();
     }
 }
 
