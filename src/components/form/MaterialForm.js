@@ -5,6 +5,7 @@ import './MaterialForm.css';
 
 import LessonTopic from './LessonTopic';
 import LessonText from './LessonText';
+import lesson from '../../store/lesson';
 
 function MaterialForm() {
     return (
@@ -20,7 +21,12 @@ function MaterialForm() {
                     <p>Тут будут чекбоксы</p>
                 </Grid>
             </Grid>
-            <Button variant="contained" color="primary" className="material-form button">
+            <Button variant="contained" color="primary" className="material-form button"
+                onClick={(e) => {
+                    e.preventDefault();
+                    lesson.getResorces();
+                }}    
+            >
                 Ищем
             </Button>
         </Form>
