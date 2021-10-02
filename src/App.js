@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import MaterialContent from './components/MaterialContent';
-import MaterialForm from './components/MaterialForm.js';
+import MaterialContent from './components/content/MaterialContent';
+import MaterialForm from './components/form/MaterialForm';
 
 function App() {
   return (

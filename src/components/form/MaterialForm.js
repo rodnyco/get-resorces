@@ -1,6 +1,8 @@
 import { Form, Textarea, Button } from 'muicss/react';
 import { Grid } from '@material-ui/core';
 
+import './MaterialForm.css';
+
 function MaterialForm() {
     return (
         <Form className="material-form">
