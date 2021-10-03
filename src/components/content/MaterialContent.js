@@ -4,6 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Resorces from './Resorces';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -60,7 +61,7 @@ export default function BasicTabs() {
             </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-            Текст
+            <Resorces />
         </TabPanel>
         <TabPanel value={value} index={1}>
             Видео

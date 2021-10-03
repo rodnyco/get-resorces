@@ -1,12 +1,12 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 
 
 class Resorces {
 
-    books = [];
-    videos = [];
-    audios = [];
-    images = [];
+    books         = [];
+    videos        = [];
+    audios        = [];
+    images        = [];
     presentations = [];
 
     isLoading = true;
@@ -17,9 +17,13 @@ class Resorces {
 
     loadResorces() {
         this.isLoading = true;
-        console.log('loading');
-        const data = this.get();
-        console.log(data);
+        this.clean();
+        this.get().then(fetchedResorces => {
+            runInAction(() => {
+                fetchedResorces.books.forEach(book => this.books.push(book));
+                this.isLoading = false;
+            })
+        });
     }
 
     get = async () => {
@@ -29,6 +33,14 @@ class Resorces {
         const request = new Request('/api/resorces', options);
         const response = await fetch(request);
         return response.json();
+    }
+
+    clean() {
+        this.books = [];
+        this.videos = [];
+        this.audios = [];
+        this.images = [];
+        this.presentations = [];
     }
 
 }
