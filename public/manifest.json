@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Поиск материалов для уроков",
+  "name": "Поиск материалов для уроков",
   "icons": [
     {
       "src": "favicon.ico",

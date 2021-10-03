@@ -11,14 +11,11 @@ function MaterialForm() {
     return (
         <Form className="material-form">
             <Grid container spacing={2}>
-                <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={6}>
                     <LessonTopic />    
                 </Grid>
-                <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={6}>
                     <LessonText /> 
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <p>Тут будут чекбоксы</p>
                 </Grid>
             </Grid>
             <Button variant="contained" color="primary" className="material-form button"

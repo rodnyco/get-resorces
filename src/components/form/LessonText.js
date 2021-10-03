@@ -6,9 +6,9 @@ import lesson from '../../store/lesson';
 const LessonText = observer(() => {
     return (
         <div className="material-form__item lesson-article">
-            <h3>Статья</h3>
-            <span>по которой тебя петушить будут</span>
-            <Textarea placeholder="Пиши давай" value={lesson.text}
+            <h3>Текст</h3>
+            <span>дополнительный текстовый материал к теме</span>
+            <Textarea placeholder="Текст" value={lesson.text}
                 onChange={event => lesson.onChangeText(event.target.value)}
             />
         </div>

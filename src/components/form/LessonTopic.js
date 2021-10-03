@@ -7,8 +7,8 @@ const LessonTopic = observer(() => {
     return (
         <div className="material-form__item lesson-topic">
             <h3>Тема урока</h3>
-            <span>по русски пиши бля</span>
-            <Textarea placeholder="Тему напиши" value={lesson.topic} 
+            <span>сформулирйте наиболее точно</span>
+            <Textarea placeholder="Тема урока" value={lesson.topic} 
                 onChange={event => lesson.onChangeTopic(event.target.value)}
             />
         </div> 
