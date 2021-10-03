@@ -18,7 +18,7 @@ class Lesson {
     }
 
     getResorces() {
-        resorces.loadResorces();
+        resorces.loadResorces(this.topic, this.text);
     }
 }
 

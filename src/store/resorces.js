@@ -14,10 +14,10 @@ class Resorces {
         makeAutoObservable(this)
     }
 
-    loadResorces() {
+    loadResorces(topic, text) {
         this.isLoading = true;
         this.clean();
-        this.get().then(fetchedResorces => {
+        this.get(topic, text).then(fetchedResorces => {
             runInAction(() => {
                 fetchedResorces.books.forEach(book => this.books.push(book));
                 fetchedResorces.videos.forEach(video => this.videos.push(video));
@@ -27,10 +27,18 @@ class Resorces {
         });
     }
 
-    get = async () => {
+    get = async (topic, text) => {
         const options = {
-            method: "GET",
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                topic: topic,
+                text: text
+            })
         }
+
         const request = new Request('/api/resorces', options);
         const response = await fetch(request);
         return response.json();
