@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import MaterialContent from './components/content/MaterialContent';
+import Resorces from './components/content/Resorces';
 import MaterialForm from './components/form/MaterialForm';
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
       <header>
         <h1 className="app-title">Поиск материалов для уроков</h1>
       </header>
-      <MaterialForm/>
-      <MaterialContent/>
+      <MaterialForm />
+      <Resorces />
     </div>
   );
 }

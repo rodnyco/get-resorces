@@ -39,7 +39,7 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs(props) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -55,25 +55,17 @@ export default function BasicTabs() {
     allowScrollButtonsMobile className="material-tabs">
             <Tab label="Текст" {...a11yProps(0)} />
             <Tab label="Видео" {...a11yProps(1)} />
-            <Tab label="Аудио" {...a11yProps(2)} />
-            <Tab label="Картинки" {...a11yProps(3)} />
-            <Tab label="Презентации" {...a11yProps(4)} />
+            <Tab label="Картинки" {...a11yProps(2)} />
             </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-            <Resorces />
+            {props.books}
         </TabPanel>
         <TabPanel value={value} index={1}>
-            Видео
+            {props.videos}
         </TabPanel>
         <TabPanel value={value} index={2}>
-            Аудио
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-            Картинки
-        </TabPanel>
-        <TabPanel value={value} index={4}>
-            Презентации
+            {props.images}
         </TabPanel>
         </Box>
     </div>  
